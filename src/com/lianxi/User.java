@@ -4,21 +4,35 @@ package com.lianxi;
  * @author yuzs
  * @date 2022-06-2022/6/2-11:14
  */
-public class USer {
+public class User {
     private int year;
     private String name;
     private String work;
     private double salary;
+    private String rank;
 
-    public USer() {
+    public String getRank() {
+        return rank;
     }
 
-    public USer(int year, String name, String work, double salary) {
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public User() {
+    }
+
+    public User(int year, String name, String work, double salary) {
         this.year = year;
         this.name = name;
         this.work = work;
         this.salary = salary;
     }
+    public User(int year, String name, String work, double salary, String rank) {
+        this();
+        this.rank = rank;
+    }
+
 
     public int getYear() {
         return year;
@@ -50,5 +64,14 @@ public class USer {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return  " name = " + getName() +
+                ",year = " + getYear() +
+                ", work= " + getWork() +
+                ", salary = " + getSalary() +
+                ", rank = " + getRank();
     }
 }
